@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quartos</title>
+</head>
+<body>
+    <main>
+        <form action="adicionar.php" method="POST">
+            <label for="">
+              Nome do quarto  <input type="text" name="nome" id="">
+            </label>
+            <label for="">
+               Capacidade de pessoas 
+               <select name="quantidade_pessoas" id="">
+                <option selected disabled value="">Quantidade de pessoas por quarto</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+               </select>
+            </label>
+            <label for="">
+               Preço da diária <input type="text" name="custo" id="">
+            </label>
+            <label for="">
+               Quantidade de camas no quarto
+               <select name="cama" id="">
+                <option selected disabled value=""> Quantidade de camas</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+            </label>
+            <label for="">
+                Tamanho do quarto em m²<input type="text" name="tamanho" id="">
+            </label>
+            <button type="submit"><span>Adicionar quarto</span></button>
+        </form>
+    </main>
+</body>
+</html>

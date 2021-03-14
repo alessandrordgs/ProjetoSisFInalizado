@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suporte</title>
+</head>
+<body>
+    <main>
+        <form action="adicionar.php" method="POST">
+            <label>
+              Nome do cliente <input type="text" name="nome" id="">
+            </label>
+            <label>
+                Tipo de plano
+              <select name="plano" id="">
+                  <option selected disabled value="">Plano </option>
+                  <option value="">Plano gratuito</option>
+                  <option value="">Plano premium</option>
+              </select>
+            </label>
+            <label>
+                Horario de suporte
+                <select name="horarioDeSuporte" id="">
+                    <option selected disabled value="">Suporte </option>
+                    <option value="">Horário comercial</option>
+                    <option value="">24 horas por dia e 7 dias da semana</option>
+                </select>
+            </label>
+            <label>
+                Atendimento exclusivo
+                <input type="radio" name="atendenteExclusivo" value="Sim">Sim
+                <input type="radio" name="atendenteExclusivo" value="Não">Não
+            </label>
+            <label>
+                Site exclusivo
+                <input type="radio" name="siteExclusivo" value="Sim">Sim
+                <input type="radio" name="siteExclusivo" value="Não">Não
+            </label>
+            <label >
+                <button type="submit">Escolher suporte</button>
+            </label>
+        </form>
+    </main>
+</body>
+</html>
