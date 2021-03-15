@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles/global.css">
+<style>
+    
+</style>
+
+<head>
+    <title>Cadastro</title>
+
+</head>
+
+<body>
+    <div class='container-form'>
+        <h1>Cadastro de usuário</h1>
+        <form id="formUsuario" name="formCadastroUsuario" action="adicionar.php" method="POST">
+            <label for="nomeUsuario">
+                <span>Nome</span>
+                <input type="text" class='input' name="nomeUsuario" placeholder="Digite o seu nome completo" />
+            </label>
+            <label for="cpf">
+                <span>CPF</span>
+                <input type="text" class='input' name="cpf" placeholder="Digite o seu CPF" />
+            </label>
+            <label for="email">
+                <span> E-mail</span>
+                <input type="text" class='input' name="email" placeholder="Digite o seu endereço de e-mail" />
+            </label>
+            <label for="celular">
+                <span> Numero de celular </span>
+                <input type="text" class='input' name="celular" placeholder="Digite o número de celular" />
+            </label>
+            <label for="dataNascimento">
+                <span> Data de nascimento </span>
+                <input type="date" name="dataNascimento" />
+            </label>
+            <br>
+            <input  class="button" type="submit" name="button" value="Enviar">
+        </form>
+    </div>
+</body>
+
+</html>

@@ -8,43 +8,49 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../styles/global.css">
     <title>Suporte</title>
+    <style>
+        h1#formSuporte {
+            margin-left: -60%;
+    }
+    </style>
 </head>
 <body>
-    <main>
-        <form action="adicionar.php" method="POST">
-            <label>
-              Nome do cliente <input type="text" name="nome" id="">
-            </label>
-            <label>
-                Tipo de plano
-              <select name="plano" id="">
-                  <option selected disabled value="">Plano </option>
-                  <option value="">Plano gratuito</option>
-                  <option value="">Plano premium</option>
-              </select>
-            </label>
-            <label>
-                Horario de suporte
-                <select name="horarioDeSuporte" id="">
-                    <option selected disabled value="">Suporte </option>
-                    <option value="">Horário comercial</option>
-                    <option value="">24 horas por dia e 7 dias da semana</option>
+    <div class='container-form'>
+        <h1 id="formSuporte">Suporte</h1>
+            <form action="adicionar.php" method="POST">
+                <label>
+                Nome do cliente <input class='input' type="text" name="nome" id="">
+                </label>
+                <label>
+                    Tipo de plano
+                <select name="plano" id="">
+                    <option selected disabled value="">Plano </option>
+                    <option value="">Plano gratuito</option>
+                    <option value="">Plano premium</option>
                 </select>
-            </label>
-            <label>
-                Atendimento exclusivo
-                <input type="radio" name="atendenteExclusivo" value="Sim">Sim
-                <input type="radio" name="atendenteExclusivo" value="Não">Não
-            </label>
-            <label>
-                Site exclusivo
-                <input type="radio" name="siteExclusivo" value="Sim">Sim
-                <input type="radio" name="siteExclusivo" value="Não">Não
-            </label>
-            <label >
-                <button type="submit">Escolher suporte</button>
-            </label>
-        </form>
-    </main>
+                </label>
+                <label>
+                    Horario de suporte
+                    <select name="horarioDeSuporte" id="">
+                        <option selected disabled value="">Suporte </option>
+                        <option value="">Horário comercial</option>
+                        <option value="">24 horas por dia e 7 dias da semana</option>
+                    </select>
+                </label>
+                <label class="radio">
+                    <span>Atendimento exclusivo:</span>
+                    <input type="radio" name="atendenteExclusivo" value="Sim">Sim
+                    <input type="radio" name="atendenteExclusivo" value="Não">Não
+                </label>
+                <label class="radio">
+                    <span>Site exclusivo:</span>
+                    <input type="radio" name="siteExclusivo" value="Sim">Sim
+                    <input type="radio" name="siteExclusivo" value="Não">Não
+                </label>
+                <label >
+                    <input class="button"type="submit" name="button" value="Escolher suporte">
+                </label>
+            </form>
+    </div>
 </body>
 </html>

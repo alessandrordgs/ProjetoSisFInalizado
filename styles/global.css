@@ -20,34 +20,41 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100vw;
+    height: 100vh;
 }
 .container-form{
     background: var(--color--white);
-    width: 45rem;
-    height: 40rem;
-    margin-top: 1rem;
+    width: 40rem;
+    height: 35rem;
     border-radius: 1.25rem;
+    padding: 1rem;
     
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
 h1{
     font-size: 1.8rem;
     border-bottom: 5px solid var(--color--button);
-    width: 20rem;
-    margin-left: 8rem;
-    padding-top: 1rem;
     font-weight: 600;
+    text-align: left;
+    margin-left: -12rem;
 }
 
 form{
     display: flex;
     flex-direction: column;
-    margin-left: 8rem;
-    margin-top: 2rem;
+    align-items: center;
 }
 label{
     display: flex;
     flex-direction: column;
-    padding-top: 1rem;
+    padding-top: 0.8rem;
+    width: 100%;
+
 }
 .input{
     width: 30rem;
@@ -60,7 +67,6 @@ label{
 }
 
 .radio{
-    margin-top: 1rem;
     display: inline;
     cursor: pointer;
 }
