@@ -1,31 +1,27 @@
 <?php 
-   $name = $_POST['nome'];
-   $quantidade_pessoas= $_POST['quantidade_pessoas'];
-   $custo= $_POST['custo'];
-   $cama= $_POST['cama'];
-   $tamanho =$_POST['tamanho'];
+ if(isset($_POST['buttonQuartos'])){
+
+   $dados = [
+      'name' => $_POST['nome'],
+      'quantidade_pessoas'=> $_POST['quantidade_pessoas'],
+      'custo'=> $_POST['custo'],
+      'cama'=> $_POST['cama'],
+      'tamanho' =>$_POST['tamanho'],
+       ];
+ };
+function Inserir($dados){
+   $pdo = Database::conexao();
+   $novo = $pdo->prepare("INSERT INTO quartos 
+       VALUES (NULL, :nome, :quantidade_pessoas, :custo,:cama,:tamanho)");
+   $novo->bindParam(":nome",$dados['nome'] ,PDO::PARAM_STR);
+   $novo->bindParam(":quantidade_pessoas",$dados['quantidade_pessoas'] ,PDO::PARAM_STR);
+   $novo->bindParam(":custo",$dados['custo'] ,PDO::PARAM_STR);
+   $novo->bindParam(":cama",$dados['cama'] ,PDO::PARAM_STR);
+   $novo->bindParam(":tamanho",$dados['tamanho'] ,PDO::PARAM_STR);
+   $novo->execute();
+   $valor = $novo ->rowcount();
+
+   return $valor;
+};
    
-
-   echo "O nome enviado foi: ". $name;
-  
-   echo "<br />";
-   echo "<br />";
-  
-   echo "A quantidade de Pessoas selecionada: " .$quantidade_pessoas;
-     
-   echo "<br />";
-   echo "<br />";
-   
-   echo "O preço do quarto é: ".$custo;
-   
-   echo "<br />";
-   echo "<br />";
-
-   echo 'Quantidade de cama por quarto: '.$cama;
-    
-   echo "<br />";
-   echo "<br />";
-
-   echo "O tamanho do quarto: " .$tamanho."m²";
-
 ?>

@@ -1,25 +1,33 @@
 <?php 
-
-$hoteis = array();
-$hoteis[] = array("nome" => "Hotel Correia", "endereco" => "Av.Raimundo Peres", "cidade" => "Macapá", "oferece_servicos" => true, "descricao" => "Acolhedor e de pequenas dimensões, coloca qualquer hóspede à vontade");
-$hoteis[] = array("nome" => "Hotel Rocha", "endereco" => "Travessa Terceira da Rodovia do Pacovals", "cidade" => "Macapá", "oferece_servicos" => true, "descricao" => "Hotel com Conforto e Qualidade");
-$hoteis[] = array("nome" => "Hotel Azevedo", "endereco" => "Avenida Três de Abril", "cidade" => "Macapá", "oferece_servicos" => false, "descricao" => "Próprio para Férias em Familia. ");
-$hoteis[] = array("nome" => "Hotel Macapá", "endereco" => "Alameda Décima Terceira", "cidade" => "Macapá", "oferece_servicos" => true, "descricao" => "Hotel de lazer para toda a família.");
-$hoteis[] = array("nome" => "Hotel Santana", "endereco" => "Travessa Primeira da Tupis", "cidade" => "Santana", "oferece_servicos" => false, "descricao" => "Hotel Confortável, Bonito e com Ótimos Preços");
-
-echo "<h1> Hoteis </h1>";
-
-foreach($hoteis as $hotel) {
-echo "<strong> Nome do Hotel: </strong> " .$hotel["nome"];
-echo "</br>";
-echo "Endereço: " .$hotel["endereco"];
-echo "</br>";
-echo "Cidade: " .$hotel["cidade"];
-echo "</br>";
-echo ($hotel["oferece_servicos"]) ? "Oferece serviços: sim" : "Oferece serviço: não";
-echo "</br>";
-
-echo "Descrição: " .$hotel["descricao"];
-echo "</br></br>";
-}
+include('config/DB.php');
+  $sql = "SELECT * FROM hoteis";
+  $stmt = Database::conexao()->prepare($sql);
+  $stmt ->execute();
+  $hotel = $stmt ->fetchAll(PDO::FETCH_ASSOC)
 ?>
+
+
+
+<table>
+<tr>
+    <th>Nome</th>
+    <th>Endereço</th>
+    <th>Cidade</th>
+    <th>Oferece serviços</th>
+</tr>
+
+<?php 
+foreach($hoteis as $hotel) {
+ ?>
+<tr>
+    <td><?php echo $hotel ['nome'];?></td>
+    <td><?php echo $hotel ['endereco'];?></td>
+    <td><?php echo $hotel ['cidade'];?></td>
+    <td><?php echo $hotel ['oferece_servicos'];?></td>
+    <td><a href="?modulo=produto&acao=editar&id=<?php echo $produto['nome'];?>"> EDITAR </a></td>
+    <td><a href="?modulo=produto&acao=excluir&id=<?php echo $produto['nome'];?>"> EXCLUIR </a></td>
+</tr>
+ <?php
+   }
+?> 
+</table>
